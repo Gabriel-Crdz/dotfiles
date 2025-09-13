@@ -1,0 +1,31 @@
+{
+    "hotkey": "<Ctrl><Space>",
+    "theme": "viridian",
+    "clear-previous-query": true,
+    "disable-desktop-filters": true,
+    "show-icons": true,
+    "grab-mouse-pointer": false,
+    "show-recent-apps": 5,
+    "opacity": 0.85,
+
+    "extensions": [
+        {
+            "id": "ulauncher-file-search",
+            "enabled": true
+        },
+        {
+            "id": "ulauncher-calculator",
+            "enabled": true,
+            "trigger": "="
+        },
+        {
+            "id": "ulauncher-google",
+            "enabled": true,
+            "trigger": "g"
+        },
+        {
+            "id": "ulauncher-clipboard",
+            "enabled": true
+        }
+    ]
+}

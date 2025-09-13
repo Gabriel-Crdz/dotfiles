@@ -1,0 +1,14 @@
+[
+    { "key": "ctrl+c", "command": "editor.action.clipboardCopyAction" },
+    { "key": "ctrl+v", "command": "editor.action.clipboardPasteAction" },
+    { "key": "ctrl+z", "command": "undo" },
+    { "key": "ctrl+x", "command": "editor.action.clipboardCutAction" },
+    { "key": "ctrl+a", "command": "editor.action.selectAll" },
+    { "key": "ctrl+s", "command": "editor.action.copyLinesDownAction" },
+    { "key": "ctrl+w", "command": "editor.action.copyLinesUpAction" },
+    { "key": "ctrl+t", "command": "workbench.action.terminal.toggleTerminal" },
+    { "key": "ctrl+f", "command": "actions.find" },
+    { "key": "alt+w", "command": "editor.action.moveLinesUpAction" },
+    { "key": "alt+s", "command": "editor.action.moveLinesDownAction" },
+    { "key": "ctrl+\\", "command": "editor.action.commentLine" }
+]

@@ -1,0 +1,17 @@
+
+# Python
+ms-python.python
+
+# Java
+redhat.java
+vscjava.vscode-java-pack
+
+# C/C++
+ms-vscode.cpptools
+
+# PHP
+felixfbecker.php-intellisense
+
+# Ícones e tema
+PKief.material-icon-theme
+ZokuGun.theme

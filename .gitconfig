@@ -1,0 +1,12 @@
+[user]
+    name = Gabriel
+    email =  134400952+GabzinhoHD@users.noreply.github.com
+
+[init]
+    defaultBranch = main
+
+[push]
+    default = simple 
+    
+[pull]
+    rebase = false

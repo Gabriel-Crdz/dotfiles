@@ -1,0 +1,12 @@
+{
+    "workbench.colorTheme": "ZokuGun",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontSize": 14,
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "files.autoSave": "onFocusChange",
+    "terminal.integrated.fontSize": 13,
+    "python.pythonPath": "python3",
+    "github.copilot.enable": false,
+    "github.copilot.inlineSuggest.enable": false
+}
