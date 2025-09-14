@@ -30,7 +30,7 @@ sudo zypper install code
 # Flatpak + Ulauncher 
 sudo zypper install -y flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install -y flathub com.github.Ulauncher
+flatpak install -y flathub
 
 # -----------------------------
 # 3. Criar diretórios de configuração
