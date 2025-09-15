@@ -3,6 +3,10 @@
 # install.sh - dotfiles OpenSUSE
 # ==============================
 
+# -----------------------------
+# Primeiro dotfiles ainda em construção, e tratando erros na execução!!
+# -----------------------------
+
 set -e # Para o script se der erro
 
 # -----------------------------
