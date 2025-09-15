@@ -22,6 +22,12 @@ sudo zypper install -y \
     python3 python3-pip \
     gcc gcc-g++ 
 
+#php(LAMP)
+sudo zypper install apache2 php8.2 apache2-mod_php8 php8.2-mysql -y
+sudo systemctl enable apache2
+sudo systemctl start apache2
+sudo chown -R $USER:$USER /srv/www/htdocs
+
 # VSCode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo zypper addrepo https://packages.microsoft.com/yumrepos/vscode vscode
