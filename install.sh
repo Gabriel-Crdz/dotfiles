@@ -40,7 +40,6 @@ echo "Criando diretórios de configuração"
 mkdir -p ~/.config/neofetch
 mkdir -p ~/.config/vscode
 mkdir -p ~/.config/ulauncher
-mkdir -p ~/.config/autostart
 
 # -----------------------------
 # 4. Copiar dotfiles
