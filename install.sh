@@ -21,6 +21,7 @@ sudo zypper install -y \
     java-17-openjdk \
     python3 python3-pip \
     gcc gcc-g++ 
+
 # VSCode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo zypper addrepo https://packages.microsoft.com/yumrepos/vscode vscode
@@ -36,28 +37,29 @@ flatpak install -y flathub
 # 3. Criar diretórios de configuração
 # -----------------------------
 echo "Criando diretórios de configuração"
-mkdir -p $HOME/.config/neofetch
-mkdir -p $HOME/.config/vscode
-mkdir -p $HOME/.config/ulauncher
-mkdir -p $HOME/.config/autostart
+mkdir -p ~/.config/neofetch
+mkdir -p ~/.config/vscode
+mkdir -p ~/.config/ulauncher
+mkdir -p ~/.config/autostart
 
 # -----------------------------
 # 4. Copiar dotfiles
 # -----------------------------
 echo "Copiando arquivos"
-cp .dotfiles/.bashrc $HOME/.bashrc
-cp .dotfiles/.gitconfig $HOME/.gitconfig
+cp .dotfiles/.bashrc ~/.bashrc
+cp .dotfiles/.gitconfig ~/.gitconfig
 
-cp .dotfiles/.config/neofetch/config.conf $HOME/.config/neofetch/config.conf
+cp .dotfiles/.config/neofetch/config.conf ~/.config/neofetch/config.conf
 
 # VSCode
-cp .dotfiles/.config/vscode/extensions.txt $HOME/.config/vscode/extensions.txt
-cp .dotfiles/.config/vscode/settings.json $HOME/.config/vscode/settings.json
-cp .dotfiles/.config/vscode/keybindings.json $HOME/.config/vscode/keybindings.json
+cp .dotfiles/.config/vscode/extensions.txt ~/.config/vscode/extensions.txt
+cp .dotfiles/.config/vscode/settings.json ~/.config/vscode/settings.json
+cp .dotfiles/.config/vscode/keybindings.json ~/.config/vscode/keybindings.json
 
 # uLauncher
-cp .dotfiles/.config/ulauncher/settings.json $HOME/.config/ulauncher/settings.json
-cp -r ~/.dotfiles/ulauncher/themes/viridian ~/.local/share/ulauncher/themes/ 2>/dev/null
+cp .dotfiles/.config/ulauncher/settings.json ~/.config/ulauncher/settings.json
+cp -r ~/dotfiles/.config/ulauncher/themes/viridian ~/.config/ulauncher/user-themes/
+
 # -----------------------------
 # 5. Instalar extensões do VSCode
 # -----------------------------
@@ -66,7 +68,7 @@ while read extension; do
     [[ "$extension" =~ ^#.*$ ]] && continue   # Ignora comentários
     [[ -z "$extension" ]] && continue         # Ignora linhas vazias
     code --install-extension "$extension"
-done < $HOME/.config/vscode/extensions.txt
+done < ~/.config/vscode/extensions.txt
 
 # -----------------------------
 # 6. Tornar scripts executáveis
@@ -81,7 +83,7 @@ Terminal=false
 X-GNOME-Autostart-enabled=true
 EOL
 
-chmod +x $HOME/.config/ulauncher/ulauncher_start.sh 2>/dev/null || true
+chmod +x ~/.config/ulauncher/ulauncher_start.sh 2>/dev/null || true
 
 # -----------------------------
 # 7. Finalização
