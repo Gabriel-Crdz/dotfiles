@@ -30,8 +30,19 @@ sudo zypper install -y \
 sudo zypper install apache2 php8.2 apache2-mod_php8 php8.2-mysql
 sudo systemctl enable apache2
 sudo systemctl start apache2
+# Permissoes de acesso do apache
+sudo usermod -aG wwwrun gabriel
 sudo chown -R root:www /srv/www/htdocs
+sudo chown -R gabriel:wwwrun /srv/www/htdocs/
 sudo chmod -R 777 /srv/www/htdocs
+
+# Caso não tenha permissao de acesso ao localhost:
+#   sudo nano /etc/apache2/default-server.conf
+# Verifique as linhas:
+#   Options Indexes FollowSymLinks
+#   AllowOverride All
+#   Require all granted
+#  sudo systemctl restart apache2
 
 # VSCode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
