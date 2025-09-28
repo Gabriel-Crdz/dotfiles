@@ -21,33 +21,33 @@ sudo zypper refresh && zypper update -y
 echo "Instalando programas"
 
 sudo zypper install -y \
-    vim neofetch unzip make \
+    vim unzip make \
     java-17-openjdk \
     python3 python3-pip \
-    gcc gcc-g++ 
+    gcc gcc-c++ 
 
 #php(LAMP)
-sudo zypper install apache2 php8.2 apache2-mod_php8 php8.2-mysql -y
+sudo zypper install apache2 php8.2 apache2-mod_php8 php8.2-mysql
 sudo systemctl enable apache2
 sudo systemctl start apache2
-sudo chown -R $USER:$USER /srv/www/htdocs
+sudo chown -R root:www /srv/www/htdocs
+sudo chmod -R 777 /srv/www/htdocs
 
 # VSCode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo zypper addrepo https://packages.microsoft.com/yumrepos/vscode vscode
-sudo zypper refresh
 sudo zypper install code
 
 # Flatpak + Ulauncher 
 sudo zypper install -y flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install -y flathub
+sudo zypper install ulauncher
 
 # -----------------------------
 # 3. Criar diretórios de configuração
 # -----------------------------
 echo "Criando diretórios de configuração"
-mkdir -p ~/.config/neofetch
 mkdir -p ~/.config/vscode
 mkdir -p ~/.config/ulauncher
 
@@ -57,8 +57,6 @@ mkdir -p ~/.config/ulauncher
 echo "Copiando arquivos"
 cp .dotfiles/.bashrc ~/.bashrc
 cp .dotfiles/.gitconfig ~/.gitconfig
-
-cp .dotfiles/.config/neofetch/config.conf ~/.config/neofetch/config.conf
 
 # VSCode
 cp .dotfiles/.config/vscode/extensions.txt ~/.config/vscode/extensions.txt
