@@ -36,13 +36,8 @@ sudo chown -R root:www /srv/www/htdocs
 sudo chown -R gabriel:wwwrun /srv/www/htdocs/
 sudo chmod -R 777 /srv/www/htdocs
 
-# Caso não tenha permissao de acesso ao localhost:
-#   sudo nano /etc/apache2/default-server.conf
-# Verifique as linhas:
-#   Options Indexes FollowSymLinks
-#   AllowOverride All
-#   Require all granted
-#  sudo systemctl restart apache2
+#PSQL
+sudo zypper install postgresql -y 
 
 # VSCode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
