@@ -27,14 +27,17 @@ sudo zypper install -y \
     gcc gcc-c++ 
 
 #php(LAMP)
-sudo zypper install apache2 php8.2 apache2-mod_php8 php8.2-mysql
+sudo zypper install apache2 php8 apache2-mod_php8 mariadb mariadb-client mariadb-tools phpMyAdmin
 sudo systemctl enable apache2
 sudo systemctl start apache2
+sudo systemctl enable mariadb
+sudo systemctl start mariadb
+sudo systemctl restart apache2
+
 # Permissoes de acesso do apache
 sudo usermod -aG wwwrun gabriel
-sudo chown -R root:www /srv/www/htdocs
-sudo chown -R gabriel:wwwrun /srv/www/htdocs/
-sudo chmod -R 777 /srv/www/htdocs
+sudo chown -R wwwrun:www /srv/www/htdocs
+sudo chmod -R 777 /srv/www/htdocs/
 
 #PSQL
 sudo zypper install postgresql -y 
