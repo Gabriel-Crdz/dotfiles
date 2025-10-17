@@ -30,7 +30,8 @@ alias la='ls -A'
 alias l='ls -CF'
 alias ..='cd ..'
 alias ...='cd ../..'
-alias update='sudo zypper refresh && sudo zypper update'
+alias update='sudo zypper refresh && sudo zypper dup'
+alias reboot='sudo reboot'
 
 # ----------------------------
 # 5. Funções
