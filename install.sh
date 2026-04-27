@@ -48,7 +48,7 @@ sudo chmod -R 777 /srv/www/htdocs/
 #  sudo systemctl restart apache2
 
 #PSQL
-sudo zypper install postgresql -y 
+sudo zypper install postgresql pgadmin4 -y 
 
 # VSCode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc

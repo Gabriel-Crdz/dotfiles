@@ -42,13 +42,6 @@ ulauncher() {
 }
 
 # ----------------------------
-# 6. Neofetch automático
-# ----------------------------
-if command -v neofetch >/dev/null 2>&1; then
-    neofetch
-fi
-
-# ----------------------------
 # 7. Git prompt (branch atual)
 # ----------------------------
 if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
@@ -77,16 +70,3 @@ shopt -s cdspell
 # 10. Core dump desativado (segurança)
 # ----------------------------
 ulimit -c 0
-
-# ----------------------------
-# 11. Configurações de desenvolvimento
-# ----------------------------
-# JAVA_HOME (ajuste se necessário)
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
-export PATH=$JAVA_HOME/bin:$PATH
-
-# Python
-export PYTHONSTARTUP=$HOME/.pythonrc
-
-# C/C++
-export PATH=/usr/bin:$PATH

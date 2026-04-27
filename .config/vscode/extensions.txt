@@ -5,13 +5,20 @@ ms-python.python
 # Java
 redhat.java
 vscjava.vscode-java-pack
+vmware.vscode-boot-dev-pack
 
 # C/C++
-ms-vscode.cpptools
+ms-vscode.cpptools-extension-pack
 
 # PHP
 felixfbecker.php-intellisense
+rangav.vscode-thunder-client
+ritwickdey.liveserver
 
 # Ícones e tema
-PKief.material-icon-theme
-ZokuGun.theme
+pkief.material-icon-theme
+zokugun.zokugun-theme
+
+# Banco de dados
+cweijan.vscode-database-client2
+cweijan.dbclient-jdbc
