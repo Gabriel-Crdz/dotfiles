@@ -20,6 +20,7 @@ sudo zypper refresh && zypper update -y
 # -----------------------------
 echo "Instalando programas"
 
+# Linguagens
 sudo zypper install -y \
     vim unzip make \
     java-17-openjdk \
@@ -27,7 +28,7 @@ sudo zypper install -y \
     gcc gcc-c++ 
 
 #php(LAMP)
-sudo zypper install apache2 php8 apache2-mod_php8 mariadb mariadb-client mariadb-tools phpMyAdmin
+sudo zypper install -y apache2 php8 apache2-mod_php8 mariadb mariadb-client mariadb-tools phpMyAdmin
 sudo systemctl enable apache2
 sudo systemctl start apache2
 sudo systemctl enable mariadb
@@ -53,20 +54,30 @@ sudo zypper install postgresql pgadmin4 -y
 # VSCode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo zypper addrepo https://packages.microsoft.com/yumrepos/vscode vscode
-sudo zypper install code
+sudo zypper install -y code
 
-# Flatpak + Ulauncher 
+# Flatpak
 sudo zypper install -y flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install -y flathub
-sudo zypper install ulauncher
+
+# Jogos
+sudo zypper install -y steam
+flatpak install -y flathub \
+com.heroicgameslauncher.hgl \
+org.vinegarhq.Sober
+
+# Discord
+flatpak install -y flathub com.discordapp.Discord
+
+# Obs
+sudo zypper install -y obs-studio
 
 # -----------------------------
 # 3. Criar diretórios de configuração
 # -----------------------------
 echo "Criando diretórios de configuração"
 mkdir -p ~/.config/vscode
-mkdir -p ~/.config/ulauncher
 
 # -----------------------------
 # 4. Copiar dotfiles
@@ -80,10 +91,6 @@ cp .dotfiles/.config/vscode/extensions.txt ~/.config/vscode/extensions.txt
 cp .dotfiles/.config/vscode/settings.json ~/.config/vscode/settings.json
 cp .dotfiles/.config/vscode/keybindings.json ~/.config/vscode/keybindings.json
 
-# uLauncher
-cp .dotfiles/.config/ulauncher/settings.json ~/.config/ulauncher/settings.json
-cp -r ~/dotfiles/.config/ulauncher/themes/viridian ~/.config/ulauncher/user-themes/
-
 # -----------------------------
 # 5. Instalar extensões do VSCode
 # -----------------------------
@@ -95,22 +102,7 @@ while read extension; do
 done < ~/.config/vscode/extensions.txt
 
 # -----------------------------
-# 6. Tornar scripts executáveis
-# -----------------------------
-cat > ~/.config/autostart/ulauncher.desktop <<EOL
-[Desktop Entry]
-Type=Application
-Name=Ulauncher
-Comment=Start Ulauncher at login
-Exec=flatpak run com.github.Ulauncher
-Terminal=false
-X-GNOME-Autostart-enabled=true
-EOL
-
-chmod +x ~/.config/ulauncher/ulauncher_start.sh 2>/dev/null || true
-
-# -----------------------------
-# 7. Finalização
+# 6. Finalização
 # -----------------------------
 echo "Instalação concluída!"
 echo "Reinicie o terminal para aplicar as configurações .bashrc"
